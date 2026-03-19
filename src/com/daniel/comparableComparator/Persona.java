@@ -52,7 +52,18 @@ public class Persona implements Bebidas, Comparable<Persona> {
         return chupitos + cubatas + cervezas;
     }
 
-    public static Comparator<Persona> ranking =
+    public static Comparator<Persona> ranking = (p1, p2) -> {
+
+        int cubatas = Integer.compare(p1.getCubatas(), p2.getCubatas());
+        if (cubatas != 0) return cubatas;
+
+        int chupitos = Integer.compare(p1.getChupitos(), p2.getChupitos());
+        if (chupitos != 0) return chupitos;
+
+        return Integer.compare(p1.getCervezas(), p2.getCervezas());
+    };
+
+    public static Comparator<Persona> rankingComparing =
             Comparator.comparing(Persona::getCubatas)
                     .thenComparing(Persona::getChupitos)
                     .thenComparing(Persona::getCervezas);

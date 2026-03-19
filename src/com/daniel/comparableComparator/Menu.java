@@ -38,7 +38,7 @@ public class Menu {
         grupo.add(p2);
         grupo.add(p3);
 
-        Collections.sort(grupo, Persona.ranking.reversed());
+        Collections.sort(grupo, Persona.rankingComparing.reversed());
         System.out.println("=== Ranking por bebidas ===");
         mostrarTabla(grupo);
 

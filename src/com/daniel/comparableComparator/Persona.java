@@ -5,11 +5,11 @@ import java.util.Comparator;
 public class Persona implements Bebidas, Comparable<Persona> {
 
     private String nombre;
-    private int chupitos;
     private int cubatas;
+    private int chupitos;
     private int cervezas;
 
-    public Persona(String nombre, int chupitos, int cubatas, int cervezas) {
+    public Persona(String nombre, int cubatas, int chupitos, int cervezas) {
         this.nombre = nombre;
         this.chupitos = chupitos;
         this.cubatas = cubatas;

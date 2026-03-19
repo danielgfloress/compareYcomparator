@@ -1,5 +1,7 @@
 package com.daniel.comparableComparator;
 
+import java.util.Comparator;
+
 public class Persona implements Bebidas, Comparable<Persona> {
 
     private String nombre;
@@ -50,8 +52,14 @@ public class Persona implements Bebidas, Comparable<Persona> {
         return chupitos + cubatas + cervezas;
     }
 
+    public static Comparator<Persona> ranking =
+            Comparator.comparing(Persona::getCubatas)
+                    .thenComparing(Persona::getChupitos)
+                    .thenComparing(Persona::getCervezas);
+
     @Override
     public int compareTo(Persona o) {
         return Integer.compare(this.getTotalBebidas(), o.getTotalBebidas());
     }
+
 }
